@@ -1,10 +1,12 @@
-function Pokemon(nombre, color, poderDeAtaque){
+var Pokebola = [];
+
+function Pokemon(nombre, color, vida, poderDeAtaque){
   this.nombre = nombre;
   this.color = color; 
   
   this.nivelDeAmistad = 0;
   
-  this.vida = 100;
+  this.vida = vida;
   this.poderDeAtaque = poderDeAtaque; 
   
   this.mostrarPokemon = function(){
@@ -17,10 +19,29 @@ function Pokemon(nombre, color, poderDeAtaque){
     pokemon.vida = pokemon.vida - this.poderDeAtaque;
   }
 }
-const Pikachu = new Pokemon("pikachu", "amarillo", 100);
-const Charmander = new Pokemon("charmander", "rojo", 20);
 
-Pikachu.atacar(Charmander);
+var pikachu = new Pokemon("pikachu", "amarillo", 100, 50);
+var charmander = new Pokemon("charmander", "rojo", 20, 80);
+var chikorita = new Pokemon("Chikorita", "verde", 80, 60);
+var squirtle = new Pokemon("squirtle", "Celeste", 90, 40);
+pokebola.push(pikachu);
+pokebola.push(charmander);
+pokebola.push(chikorita);
+pokebola.push(squirtle);
 
-document.write("La vida de Charmander es: " + Charmander.vida);
 
+pikachu.atacar(charmander);
+
+console.log("La vida de Charmander es: " + Charmander.vida);
+
+function pelea(){
+  var pelear1 = document.getElementById("pelea1").value;
+  var pelear2 = document.getElementById("pelea2").value;
+  var poke1 = new Pokemon(pelear1 ,"azul", 100);
+  var poke2 = new Pokemon(pelear2, "verde", 20);
+
+(poke1.atacar(poke2));
+
+  
+}
+pelea();
